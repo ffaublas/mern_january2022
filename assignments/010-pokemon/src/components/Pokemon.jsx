@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 
 const Pokemon = ()=>{
 
@@ -9,9 +10,6 @@ const Pokemon = ()=>{
 
         fetch("https://pokeapi.co/api/v2/pokemon?limit=1000")
         
-        .then(response=>{
-            return response.json() 
-        })
         .then(response=>{
             console.log("response after formatting it to json-->", response)
             setListOfPokemon(response.results)
