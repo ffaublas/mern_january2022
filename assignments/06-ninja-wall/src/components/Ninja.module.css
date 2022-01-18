@@ -1,0 +1,26 @@
+/* .ninja {
+    width: 20%;
+    min-height: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    vertical-align: top;
+    animation: slide-in 3s; 
+} */
+
+/* slide in feature - add animation (above) first */
+/* @keyframes slide-in {
+    from {
+        transform: translateX(1600px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+    
+} */
+
+/* Steps */
+/* Step 1. create the module.css in components folder */
+/* Step 2. import this into Ninja  */
+/* import styles from './Ninja.module.css'; */
+
+/* Step 3. give the div  className = {styles.ninja} */
