@@ -26,12 +26,14 @@ const TodoList = (props) =>{
         setlistOfTodos(copyOfListOfTodos);
     }
 
-    const TodoDelete = (delidx) => {
-        // const filterTodo = addTodo.filter((todo, i) => {
-        //     return i != delidx;
-        // });
+    const deleteTask = (idx) => {
+        console.log("deleting the task at index -->", idx)
+        let newList = listOfTodos.filter((todoObj, i)=>{
+            return i != idx
+        })
 
-        // setnewTodo(filterTodo);
+        setlistOfTodos(newList);
+
     }
 
     return (
@@ -41,7 +43,7 @@ const TodoList = (props) =>{
                     <label htmlFor="Get { newtodo } Black Belt"></label>
                     <input type="text" name="" id="" className="form-control" onChange = {(e)=>setnewTodo(e.target.value)}/>
                 </div>
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add" className="btn btn-success mt-3" />
 
                 
             
@@ -52,7 +54,7 @@ const TodoList = (props) =>{
                     return (
                         <div key = {i} style = {{textDecoration: todo.isComplete? 'line-through': 'none'}} >
                             <p><input type="checkbox" onClick = {() => toggleNewbelt(i)} />{todo.taskname}</p>
-                            <button onClick = {(e)=>{TodoDelete(i);}}>Delete</button>
+                            <p><button onClick = {() =>deleteTask(i)}  className= "btn btn-danger">Delete</button></p>
                         </div>
                     )
                 }) 
