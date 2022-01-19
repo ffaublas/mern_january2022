@@ -22,7 +22,7 @@ const Ninja = () =>{
         setListOfNinjas([...listOfNinjas, ninjaObj]) //purpose of ... is to keep/store previous list of ninjas, while ninjaObj will add a new ninja to the list of ninjas.
     }
 
-    //toggle gradateion for studnet function that gets called when the checkbox is clicked
+    //toggle graduation for studnet function that gets called when the checkbox is clicked
     const toggleGraduation = (idx)=>{
         console.log("Trying to graduate this student - > logging idx of student here:" ,idx)
         //create a copy of list of ninjas, then update the list of ninjas array at specific index of sutdne we wnat to graduate to hae their graduation property = true. 
