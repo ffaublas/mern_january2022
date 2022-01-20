@@ -1,12 +1,12 @@
 
 import './App.css';
-import CryptoCoinsUsingAxios from './components/CryptoCoinsUsingAxios';
+import CryptoCoinsUsingAxiosAndUseEffect from './components/CryptoCoinsUsingAxiosAndUseEffect';
 
 function App() {
     return (
         <div className="App">
         <h1>Hello Crypto Api demo</h1>
-        <CryptoCoinsUsingAxios></CryptoCoinsUsingAxios>
+        <CryptoCoinsUsingAxiosAndUseEffect></CryptoCoinsUsingAxiosAndUseEffect>
         </div>
     );
 }
