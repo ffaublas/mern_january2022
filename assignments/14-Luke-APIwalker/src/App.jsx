@@ -4,25 +4,24 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link
-} from 'react-router-dom';
+  Link 
+} from "react-router-dom";
 
-import Display from './components/Display';
+import SearchForm from './components/SearchForm';
+import Detail from './components/Detail';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App container">
+        <h1>Luke Api Walker</h1>
+        <SearchForm></SearchForm>
         <Switch>
-          <Route exact path = "/">
-            <h1>Welcome</h1>
-          </Route>
-          <Route exact path = "/:id/">
-            <Display></Display>
+          <Route exact path = "/:category/:id">
+            <Detail></Detail>
           </Route>
         </Switch>
       </div>
-    
     </BrowserRouter>
   );
 }
