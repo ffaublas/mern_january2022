@@ -14,8 +14,8 @@ module.exports.createNewJoker = (req, res) => {
 
 module.exports.findOneSingleJoker = (req, res) => {
 	Joker.findOne({ _id: req.params.id })
-		.then(oneSingleJoker => res.json({ result: oneSingleJoker }))
-		.catch(err => res.json({ message: "Something went wrong", error: err }));
+    .then(oneSingleJoker => res.json({ result: oneSingleJoker }))
+    .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 
 

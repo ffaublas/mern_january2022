@@ -10,3 +10,4 @@ module.exports = app => {
     app.delete("/api/jokes/delete/:id", JokerController.deleteAnExistingJoker);
     
 };
+
