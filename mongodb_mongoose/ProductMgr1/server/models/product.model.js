@@ -19,6 +19,9 @@ const ProductSchema = new mongoose.Schema(
 			required: [true, "A description is required!"],
 			minlength: [10, "A description must be at least 10 characters!"]
 		},
+		isNewToMarket: { // Not a required field so it wont have validators
+			type: Boolean
+		}
 	},
 	// { timestamps: true }
 );
