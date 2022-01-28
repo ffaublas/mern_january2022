@@ -4,7 +4,7 @@ import {
     Link 
 } from "react-router-dom";
 
-const AllProducts = () => {
+const AllProducts = (props) => {
 
     let [allProducts, setAllProducts] = useState([])
     let [deleted, setDeleted] = useState(false)
@@ -19,7 +19,7 @@ const AllProducts = () => {
                 
             })
             .catch(err=> {console.log("ERROR", err)})
-    },[deleted])
+    },[deleted, props.newProductAdded])
 
 
     const deleteProduct = (productId)=>{

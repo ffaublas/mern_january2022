@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
-const AddProducts = () => {
+const AddProducts = (props) => {
 
     //state variables for each info collected from form
 
     let [title, setTitle] = useState("")
-    let [price, setPrice] = useState(0)
+    let [price, setPrice] = useState(null)
     let [description, setDescription] = useState("")
     let [isNewToMarket, setIsNewToMarket] = useState(false)
 
     let [formErrors, setFormErrors] = useState({})
+
+    const history = useHistory();
 
     const createSubmitHandler = (e)=>{
         e.preventDefault();
@@ -28,6 +31,13 @@ const AddProducts = () => {
                 if(res.data.error){ //validation errors happened
                     //res.data.error.errors contains an object that has my validation error messages for each input
                     setFormErrors(res.data.error.errors)
+                }else{
+                    props.setNewProductAdded(!props.newProductAdded)
+                    setTitle("");
+                    setPrice(null);
+                    setDescription("");
+                    setIsNewToMarket(false)
+                    history.push("/")
                 }
             })
             .catch(err=>console.log("error in submitting post request",err))
@@ -39,7 +49,7 @@ const AddProducts = () => {
             <form onSubmit = {createSubmitHandler}>
                 <div className="form-group">
                     <label htmlFor="">Title</label>
-                    <input onChange = {(e)=>{setTitle(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setTitle("e.target.value")}} type="text" name="" id="" className="form-control" />
                     <p className="text-danger">{formErrors.title?.message}</p>
                 </div>
                 <div className="form-group">

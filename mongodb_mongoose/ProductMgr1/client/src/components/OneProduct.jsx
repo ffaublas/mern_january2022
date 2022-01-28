@@ -8,12 +8,14 @@ const OneProduct = () => {
 
     const history = useHistory();//to redirect after deleting a product
 
-    const [productDetails, setProductDetails] = useState({
-        title:"",
-        price:0,
-        description:"",
-        isNewToMarket: false
-    })
+    const [productDetails, setProductDetails] = useState({})
+
+    // const [productDetails, setProductDetails] = useState({
+    //     title:"",
+    //     price:0,
+    //     description:"",
+    //     isNewToMarket: false
+    // })
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/products/${id}`)
