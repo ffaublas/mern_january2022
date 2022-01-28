@@ -17,6 +17,6 @@ require("./server/config/mongoose")
 
 
 //import the routes and pass the app object to the routes
-require('./server/routes/product.routes')(app);
+require('./server/routes/favorite.routes')(app);
 
 app.listen( port, () => console.log(`Listening on port: ${port}`) );

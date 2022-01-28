@@ -1,12 +1,12 @@
-// In this version - all Products will show up on Port 3000; To add a product, need a new "create" button to  bring to a form (in /new created on lines 33-36)
-// To redirect to Port 3000 (or homepage) after creating a new product = > add 1) Use History; 2) initialize useHistory & 3) history.push("/") into "Add Product" file 
+// In this version - all Authors will show up on Port 3000; To add a author, need a new "create" button to  bring to a form (in /new created on lines 33-36)
+// To redirect to Port 3000 (or homepage) after creating a new author = > add 1) Use History; 2) initialize useHistory & 3) history.push("/") into "Add author" file 
 //Now go to homepage to add a create button to take us to /new - do this below (while in App.js - line 26 )
 import './App.css';
 // import React, { useState } from 'react';
-import AddProducts from './components/AddProducts';
-import AllProducts from './components/AllProducts';
-import OneProduct from './components/OneProduct';
-import EditProduct from './components/EditProduct';
+import AddAuthor from './components/AddAuthor';
+import AllAuthors from './components/AllAuthors';
+import OneAuthor from './components/OneAuthor';
+import EditAuthor from './components/EditAuthor';
 
 
 import {
@@ -22,25 +22,29 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App container">
-        <h1>Product Manager Part 2</h1>
-        <Link to = "/new" className='btn btn-secondary' >Add a Product</Link>
+        <h1>Favorite Authors</h1>
+        
         <Switch>
+        
           <Route exact path= "/">
+          <Link to = "/new" >Add an Author</Link>
             <hr />
-            <AllProducts />   
+            <AllAuthors />
           </Route>
 
           <Route exact path= "/new">
-            <AddProducts />
+          <Link to = "/" >Home</Link>
+            <AddAuthor />
             <hr />
           </Route>
 
-          <Route exact path= "/products/:id">
-            <OneProduct />
+          <Route exact path= "/author/:id">
+            <OneAuthor />
           </Route>
 
-          <Route exact path= "/products/edit/:id">
-            <EditProduct />
+          <Route exact path= "/author/edit/:id">
+          <Link to = "/" >Home</Link>
+            <EditAuthor />
           </Route>
 
 
