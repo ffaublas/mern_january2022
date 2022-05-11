@@ -1,11 +1,13 @@
 // importing React and component so that we can create React Compononet 
 import React, { Component } from 'react';
-    
-    
+
+
 class MenuItem extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
+        // Inside of this object, place the information that you want to change (i.e. turn lights off/on)
+        // Providing it with a key value pair
         this.state = {
             // position: "On"
             likes: this.props.likes
@@ -18,11 +20,11 @@ class MenuItem extends Component {
         // console.log("logging this.props", this.props)
         // let {dish, price} = this.props
 
-        let clickHandler = () =>{
-                console.log('This message will self destruct');
-                // ^ alert("let's get those likes") ^
-                this.setState({likes: this.state.likes+1});
-                // ^when  the button is clicked, increase the state variable for likes ^
+        let clickHandler = () => {
+            console.log('This message will self destruct');
+            alert("let's get those likes")
+            this.setState({ likes: this.state.likes + 1 });
+            // ^when  the button is clicked, increase the state variable for likes ^
         }
 
         return <div>
@@ -30,12 +32,12 @@ class MenuItem extends Component {
             <p>Price: {this.props.price}</p>
             {this.props.children}
             <p>Number of likes: {this.state.likes}</p>
-            <button onClick = {clickHandler}>Like {this.props.dish}</button>
+            <button onClick={clickHandler}>Like {this.props.dish}</button>
 
         </div>
     }
 }
-    
+
 export default MenuItem;
 // <!-- export the class so that it is importable from other files  -->
 
